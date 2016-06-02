@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=clave
+comment0.target=Mecanismo(int)
+comment0.text=\r\nConstructor\r\n
+comment1.params=
+comment1.target=int\ getClave()
+comment2.params=mensage
+comment2.target=int\ encripta(int)
+comment3.params=mensage
+comment3.target=int\ desencripta(int)
+numComments=4

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Enigma()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Enigma\r\n
+comment1.params=mecanismo\ mensage
+comment1.target=int\ encripta(Mecanismo,\ int)
+comment1.text=\r\n\ \r\n
+comment2.params=mecanismo\ mensage
+comment2.target=int\ desencripta(Mecanismo,\ int)
+comment2.text=\r\n\ \r\n
+numComments=3
