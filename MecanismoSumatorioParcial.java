@@ -5,18 +5,16 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MecanismoSumatorioParcial
+public class MecanismoSumatorioParcial extends Mecanismo
 {
-    // instance variables - replace the example below with your own
-    private int x;
+   
 
     /**
      * Constructor for objects of class MecanismoSumatorioParcial
      */
-    public MecanismoSumatorioParcial()
+    public MecanismoSumatorioParcial(int clave)
     {
-        // initialise instance variables
-        x = 0;
+       super(clave);
     }
 
     /**
@@ -25,9 +23,30 @@ public class MecanismoSumatorioParcial
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public int encripta(int mensage)
     {
-        // put your code here
-        return x + y;
+        int cont  = mensage;
+        while (cont > getClave()){
+            cont = cont - 1;
+            mensage = mensage + cont;
+        }
+        return mensage;
+    }
+    
+    public int desencripta(int mensage)
+    {
+        int cont = getClave();
+        boolean para = false;
+        while (cont != mensage && !para)
+        {
+           mensage = mensage - cont;
+            cont=  +1 ;
+            if(mensage <= 10)
+            {
+                mensage = -1;
+                para  = true;
+            }
+        }
+        return mensage;
     }
 }
