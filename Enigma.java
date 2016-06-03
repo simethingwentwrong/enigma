@@ -22,7 +22,7 @@ public class Enigma
     public int encripta(Mecanismo mecanismo, int mensage)
     {
         int encriptado = -1;
-        if(mensage >= 10){
+        if(mensage > 10){
             encriptado = mecanismo.encripta( mensage);
         }
         
@@ -34,10 +34,10 @@ public class Enigma
      */
     public int desencripta(Mecanismo mecanismo, int mensage)
     {
-        int encriptado = -1;
-        if(mecanismo.desencripta( mensage) >= 10){
-           encriptado = mecanismo.desencripta( mensage);
+        int desencriptado = -1;
+        if(mecanismo.desencripta( mensage) >10){
+           desencriptado = mecanismo.desencripta( mensage);
         }
-        return encriptado;
+        return desencriptado;
     }
 }

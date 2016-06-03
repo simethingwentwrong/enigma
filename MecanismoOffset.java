@@ -1,33 +1,65 @@
 
+import java.util.ArrayList;
 /**
  * Write a description of class MecanismoOffset here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MecanismoOffset
+public class MecanismoOffset extends Mecanismo
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
     /**
      * Constructor for objects of class MecanismoOffset
      */
-    public MecanismoOffset()
+    public MecanismoOffset(int clave)
     {
-        // initialise instance variables
-        x = 0;
+        super(clave);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public int encripta(int num)
     {
-        // put your code here
-        return x + y;
+        String numero = "";
+        int encriptado = -1;
+        ArrayList<Integer> digitos = new ArrayList<>();
+        while(num>0){
+            digitos.add(num % 10);
+            num/=10;
+        }
+        for(int cont = digitos.size()-2;cont >= 0;cont--)
+        {
+            int digito = digitos.get(cont) + getClave();
+            if(digito>=10)
+            {
+                digito = digito % 10;
+            }
+            numero = (numero + digito);
+        }
+        numero = digitos.get(digitos.size()-1) + numero;
+        encriptado = Integer.parseInt(numero);
+        return encriptado;
+    }
+
+    public int desencripta(int num)
+    {
+        String numero = "";
+        int desencriptado = -1;
+        ArrayList<Integer> digitos = new ArrayList<>();
+        while(num>0){
+            digitos.add(num % 10);
+            num/=10;
+        }
+        for(int cont = digitos.size()-2;cont >= 0;cont--)
+        {
+            int digito = digitos.get(cont) - getClave();
+            if(digito < 0)
+            {
+                digito = digito + 10;
+            }
+            numero = (numero + digito);
+        }
+        numero = digitos.get(digitos.size()-1) + numero;
+        desencriptado = Integer.parseInt(numero);
+        return desencriptado;
     }
 }
